@@ -80,15 +80,7 @@ nav.scrolled .max-w-7xl {
     animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* Three.js adjustments */
-#three-canvas {
-    touch-action: none;
-    cursor: grab;
-}
 
-#three-canvas:active {
-    cursor: grabbing;
-}
 
 /* Loader Animation */
 #loader.hidden {
