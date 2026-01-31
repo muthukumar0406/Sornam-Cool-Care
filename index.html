@@ -75,7 +75,7 @@
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4" id="navbar">
         <div
-            class="max-w-7xl mx-auto flex items-center justify-between bg-white/70 dark:bg-slate-800/70 backdrop-blur-md rounded-2xl px-6 py-3 shadow-lg border border-white/20 dark:border-slate-700/50">
+            class="max-w-7xl mx-auto flex items-center justify-between bg-white/90 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl px-6 py-3 shadow-xl border border-white/20 dark:border-slate-700/50">
             <a href="#" class="flex items-center gap-2">
                 <div class="bg-primary p-2 rounded-lg">
                     <i data-lucide="snowflake" class="text-white w-6 h-6"></i>
@@ -88,18 +88,26 @@
             </a>
 
             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center gap-8 font-medium">
+            <div class="hidden md:flex items-center gap-6 lg:gap-8 font-medium">
                 <a href="#home"
-                    class="hover:text-primary transition-colors dark:text-slate-300 dark:hover:text-primary">Home</a>
+                    class="nav-link hover:text-primary transition-colors dark:text-slate-200 dark:hover:text-primary">Home</a>
                 <a href="#services"
-                    class="hover:text-primary transition-colors dark:text-slate-300 dark:hover:text-primary">Services</a>
+                    class="nav-link hover:text-primary transition-colors dark:text-slate-200 dark:hover:text-primary">Services</a>
                 <a href="#products"
-                    class="hover:text-primary transition-colors dark:text-slate-300 dark:hover:text-primary">Products</a>
-                <a href="#about"
-                    class="hover:text-primary transition-colors dark:text-slate-300 dark:hover:text-primary">About
+                    class="nav-link hover:text-primary transition-colors dark:text-slate-200 dark:hover:text-primary">Products</a>
+                <a href="#why-us"
+                    class="nav-link hover:text-primary transition-colors dark:text-slate-200 dark:hover:text-primary">Why
                     Us</a>
+                <a href="#projects"
+                    class="nav-link hover:text-primary transition-colors dark:text-slate-200 dark:hover:text-primary">Recent
+                    Project</a>
+                <a href="#about"
+                    class="nav-link hover:text-primary transition-colors dark:text-slate-200 dark:hover:text-primary">About
+                    Us</a>
+                <a href="#reviews"
+                    class="nav-link hover:text-primary transition-colors dark:text-slate-200 dark:hover:text-primary">Review</a>
                 <a href="#contact"
-                    class="hover:text-primary transition-colors dark:text-slate-300 dark:hover:text-primary">Contact</a>
+                    class="nav-link hover:text-primary transition-colors dark:text-slate-200 dark:hover:text-primary">Contact</a>
             </div>
 
             <!-- Search & Theme Toggle -->
@@ -129,22 +137,69 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu"
-            class="md:hidden absolute top-24 left-6 right-6 bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-2xl border border-ice dark:border-slate-700 hidden opacity-0 translate-y-4 transition-all duration-300">
-            <div class="flex flex-col gap-4 font-medium">
+            class="md:hidden absolute top-24 left-6 right-6 bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-2xl border border-ice dark:border-slate-800 hidden opacity-0 translate-y-4 transition-all duration-300">
+            <div class="flex flex-col gap-2 font-medium">
                 <a href="#home"
-                    class="p-2 hover:bg-ice dark:hover:bg-slate-700 rounded-lg transition-colors dark:text-white">Home</a>
+                    class="nav-link-mobile p-3 hover:bg-ice dark:hover:bg-slate-700/50 rounded-2xl transition-all flex items-center gap-3 dark:text-white">
+                    <div class="w-9 h-9 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                        <i data-lucide="home" class="w-4 h-4"></i>
+                    </div>
+                    <span class="text-sm">Home</span>
+                </a>
                 <a href="#services"
-                    class="p-2 hover:bg-ice dark:hover:bg-slate-700 rounded-lg transition-colors dark:text-white">Services</a>
+                    class="nav-link-mobile p-3 hover:bg-ice dark:hover:bg-slate-700/50 rounded-2xl transition-all flex items-center gap-3 dark:text-white">
+                    <div class="w-9 h-9 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                        <i data-lucide="settings" class="w-4 h-4"></i>
+                    </div>
+                    <span class="text-sm">Services</span>
+                </a>
                 <a href="#products"
-                    class="p-2 hover:bg-ice dark:hover:bg-slate-700 rounded-lg transition-colors dark:text-white">Products</a>
+                    class="nav-link-mobile p-3 hover:bg-ice dark:hover:bg-slate-700/50 rounded-2xl transition-all flex items-center gap-3 dark:text-white">
+                    <div class="w-9 h-9 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                        <i data-lucide="package" class="w-4 h-4"></i>
+                    </div>
+                    <span class="text-sm">Products</span>
+                </a>
+                <a href="#why-us"
+                    class="nav-link-mobile p-3 hover:bg-ice dark:hover:bg-slate-700/50 rounded-2xl transition-all flex items-center gap-3 dark:text-white">
+                    <div class="w-9 h-9 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary">
+                        <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    </div>
+                    <span class="text-sm">Why Us</span>
+                </a>
+                <a href="#projects"
+                    class="nav-link-mobile p-3 hover:bg-ice dark:hover:bg-slate-700/50 rounded-2xl transition-all flex items-center gap-3 dark:text-white">
+                    <div class="w-9 h-9 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                        <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                    </div>
+                    <span class="text-sm">Recent Project</span>
+                </a>
                 <a href="#about"
-                    class="p-2 hover:bg-ice dark:hover:bg-slate-700 rounded-lg transition-colors dark:text-white">About
-                    Us</a>
+                    class="nav-link-mobile p-3 hover:bg-ice dark:hover:bg-slate-700/50 rounded-2xl transition-all flex items-center gap-3 dark:text-white">
+                    <div class="w-9 h-9 bg-teal-500/10 rounded-xl flex items-center justify-center text-teal-600">
+                        <i data-lucide="info" class="w-4 h-4"></i>
+                    </div>
+                    <span class="text-sm">About Us</span>
+                </a>
+                <a href="#reviews"
+                    class="nav-link-mobile p-3 hover:bg-ice dark:hover:bg-slate-700/50 rounded-2xl transition-all flex items-center gap-3 dark:text-white">
+                    <div class="w-9 h-9 bg-yellow-500/10 rounded-xl flex items-center justify-center text-yellow-600">
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                    </div>
+                    <span class="text-sm">Review</span>
+                </a>
                 <a href="#contact"
-                    class="p-2 hover:bg-ice dark:hover:bg-slate-700 rounded-lg transition-colors dark:text-white">Contact</a>
-                <hr class="border-ice dark:border-slate-700">
-                <a href="tel:7502480416" class="bg-primary text-white text-center py-3 rounded-xl font-bold">Call
-                    Now</a>
+                    class="nav-link-mobile p-3 hover:bg-ice dark:hover:bg-slate-700/50 rounded-2xl transition-all flex items-center gap-3 dark:text-white">
+                    <div class="w-9 h-9 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-600">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                    </div>
+                    <span class="text-sm">Contact</span>
+                </a>
+                <div class="my-1 border-t border-ice dark:border-slate-700/50"></div>
+                <a href="tel:7502480416"
+                    class="bg-primary text-white text-center py-3 rounded-xl font-bold active:scale-95 transition-transform">
+                    Call 75024 80416
+                </a>
             </div>
         </div>
     </nav>
@@ -692,62 +747,63 @@
     </section>
 
     <!-- Why Choose Us / Reliability Section -->
-    <section class="py-24 bg-white overflow-hidden">
+    <section id="why-us" class="py-24 bg-white dark:bg-slate-900 transition-colors overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="order-2 lg:order-1 reveal">
                     <h2 class="text-primary font-bold uppercase tracking-widest text-sm mb-4">Why Choose Us</h2>
-                    <h3 class="text-4xl md:text-5xl font-extrabold font-outfit mb-8">Trusted by 5,000+ Chennai Families
-                    </h3>
+                    <h3 class="text-4xl md:text-5xl font-extrabold font-outfit mb-8 dark:text-white">Trusted by 5,000+
+                        Chennai Families</h3>
                     <div class="space-y-6">
                         <div
-                            class="flex gap-6 p-6 bg-ice rounded-3xl border border-primary/5 hover:border-primary/20 transition-all">
+                            class="flex gap-6 p-6 bg-ice dark:bg-slate-800 rounded-3xl border border-primary/5 dark:border-slate-700 hover:border-primary/20 transition-all">
                             <div
-                                class="w-14 h-14 bg-white text-primary rounded-2xl flex-shrink-0 flex items-center justify-center shadow-sm">
+                                class="w-14 h-14 bg-white dark:bg-slate-700 text-primary rounded-2xl flex-shrink-0 flex items-center justify-center shadow-sm">
                                 <i data-lucide="shield-check" class="w-8 h-8"></i>
                             </div>
                             <div>
                                 <h5 class="text-xl font-bold mb-2 dark:text-white">Certified Professionals</h5>
-                                <p class="text-slate-600">All our technicians undergo rigorous brand-specific training
-                                    and background verification.</p>
+                                <p class="text-slate-600 dark:text-slate-400">All our technicians undergo rigorous
+                                    brand-specific training and background verification.</p>
                             </div>
                         </div>
                         <div
-                            class="flex gap-6 p-6 bg-white rounded-3xl border border-ice hover:border-primary/20 transition-all">
+                            class="flex gap-6 p-6 bg-white dark:bg-slate-800 rounded-3xl border border-ice dark:border-slate-700 hover:border-primary/20 transition-all">
                             <div
-                                class="w-14 h-14 bg-ice text-primary rounded-2xl flex-shrink-0 flex items-center justify-center">
+                                class="w-14 h-14 bg-ice dark:bg-slate-700 text-primary rounded-2xl flex-shrink-0 flex items-center justify-center">
                                 <i data-lucide="clock-3" class="w-8 h-8"></i>
                             </div>
                             <div>
                                 <h5 class="text-xl font-bold mb-2 dark:text-white">2-Hour Rapid Response</h5>
-                                <p class="text-slate-600">We respond to 90% of our service requests within 2 hours
-                                    across Chennai city.</p>
+                                <p class="text-slate-600 dark:text-slate-400">We respond to 90% of our service requests
+                                    within 2 hours across Chennai city.</p>
                             </div>
                         </div>
                         <div
-                            class="flex gap-6 p-6 bg-white rounded-3xl border border-ice hover:border-primary/20 transition-all">
+                            class="flex gap-6 p-6 bg-white dark:bg-slate-800 rounded-3xl border border-ice dark:border-slate-700 hover:border-primary/20 transition-all">
                             <div
-                                class="w-14 h-14 bg-ice text-primary rounded-2xl flex-shrink-0 flex items-center justify-center">
+                                class="w-14 h-14 bg-ice dark:bg-slate-700 text-primary rounded-2xl flex-shrink-0 flex items-center justify-center">
                                 <i data-lucide="zap" class="w-8 h-8"></i>
                             </div>
                             <div>
                                 <h5 class="text-xl font-bold mb-2 dark:text-white">Original Spare Parts</h5>
-                                <p class="text-slate-600">We never compromise with quality. We only use 100% genuine
-                                    factory-approved parts.</p>
+                                <p class="text-slate-600 dark:text-slate-400">We never compromise with quality. We only
+                                    use 100% genuine factory-approved parts.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="order-1 lg:order-2 relative reveal">
-                    <div class="hidden lg:block rounded-[50px] overflow-hidden shadow-2xl skew-y-1">
+                    <div class="rounded-[50px] overflow-hidden shadow-2xl skew-y-1 relative">
+                        <div class="absolute inset-0 bg-primary/10 dark:bg-primary/5 pointer-events-none"></div>
                         <img src="assets/family.png" alt="Happy family in cool home" loading="lazy" decoding="async"
                             class="w-full h-full object-cover">
                     </div>
                     <div
                         class="absolute -bottom-8 -left-8 bg-primary p-8 rounded-3xl text-white shadow-2xl max-w-[200px] animate-float">
                         <div class="text-4xl font-black mb-1">98%</div>
-                        <div class="text-xs font-bold uppercase tracking-widest opacity-80">Customer Satisfaction Rate
-                        </div>
+                        <div class="text-xs font-bold uppercase tracking-widest opacity-80 leading-snug">Customer
+                            Satisfaction Rate</div>
                     </div>
                 </div>
             </div>
@@ -755,22 +811,23 @@
     </section>
 
     <!-- Recent Work Gallery -->
-    <section class="py-24 bg-white dark:bg-slate-900 transition-colors">
+    <section id="projects" class="py-24 bg-white dark:bg-slate-900 transition-colors">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-primary font-bold uppercase tracking-widest text-sm mb-4">Our Work</h2>
                 <h3 class="text-4xl md:text-5xl font-extrabold font-outfit mb-6 dark:text-white">Recent Service Visits
                 </h3>
             </div>
-            <div class="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="group relative overflow-hidden rounded-[40px] shadow-lg h-[300px] reveal">
                     <img src="assets/ac.png" alt="Recent AC Installation" loading="lazy" decoding="async"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                        class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
                         <div>
                             <div class="text-white font-bold text-xl">Split AC Installation</div>
-                            <div class="text-primary text-sm font-bold uppercase">Anna Nagar, Chennai</div>
+                            <div class="text-primary text-sm font-bold uppercase tracking-widest">Anna Nagar, Chennai
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -778,89 +835,24 @@
                     <img src="assets/fridge.png" alt="Recent Fridge Service" loading="lazy" decoding="async"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                        class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
                         <div>
                             <div class="text-white font-bold text-xl">Refrigerator Repair</div>
-                            <div class="text-primary text-sm font-bold uppercase">Adyar, Chennai</div>
+                            <div class="text-primary text-sm font-bold uppercase tracking-widest">Adyar, Chennai</div>
                         </div>
                     </div>
                 </div>
-                <div class="group relative overflow-hidden rounded-[40px] shadow-lg h-[300px] reveal">
+                <div
+                    class="group relative overflow-hidden rounded-[40px] shadow-lg h-[300px] sm:col-span-2 lg:col-span-1 reveal">
                     <img src="assets/about.png" alt="Technician at work" loading="lazy" decoding="async"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                        class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
                         <div>
                             <div class="text-white font-bold text-xl">Expert Maintenance</div>
-                            <div class="text-primary text-sm font-bold uppercase">T-Nagar, Chennai</div>
+                            <div class="text-primary text-sm font-bold uppercase tracking-widest">T-Nagar, Chennai</div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="py-24 bg-ice/30 dark:bg-slate-800/20 transition-colors">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-primary font-bold uppercase tracking-widest text-sm mb-4">Reviews</h2>
-                <h3 class="text-4xl font-extrabold font-outfit dark:text-white">What Our Customers Say</h3>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div
-                    class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm border border-ice dark:border-slate-700 relative">
-                    <div
-                        class="absolute -top-4 -left-4 w-12 h-12 bg-primary text-white rounded-2xl flex items-center justify-center">
-                        <i data-lucide="quote" class="w-6 h-6"></i>
-                    </div>
-                    <div class="flex text-yellow-500 gap-1 mb-4">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                    <p class="text-slate-600 italic mb-6">"Excellent service! They repaired my AC within 3 hours of
-                        calling. The technician was very professional and the price was transparent."</p>
-                    <div class="font-bold">Rahul Krishnan</div>
-                    <div class="text-xs text-slate-400 font-bold uppercase">Anna Nagar, Chennai</div>
-                </div>
-                <div
-                    class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm border border-ice dark:border-slate-700 relative">
-                    <div
-                        class="absolute -top-4 -left-4 w-12 h-12 bg-primary text-white rounded-2xl flex items-center justify-center">
-                        <i data-lucide="quote" class="w-6 h-6"></i>
-                    </div>
-                    <div class="flex text-yellow-500 gap-1 mb-4">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                    <p class="text-slate-600 italic mb-6">"Bought a new fridge from Sornam. Great advice on choosing the
-                        right model and the delivery was prompt. Highly recommended!"</p>
-                    <div class="font-bold">Priya Sundar</div>
-                    <div class="text-xs text-slate-400 font-bold uppercase">Adyar, Chennai</div>
-                </div>
-                <div
-                    class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm border border-ice dark:border-slate-700 relative">
-                    <div
-                        class="absolute -top-4 -left-4 w-12 h-12 bg-primary text-white rounded-2xl flex items-center justify-center">
-                        <i data-lucide="quote" class="w-6 h-6"></i>
-                    </div>
-                    <div class="flex text-yellow-500 gap-1 mb-4">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                    <p class="text-slate-600 italic mb-6">"Their washing machine repair service is top-notch. They fixed
-                        a complex PCB issue that others couldn't handle. Very satisfied."</p>
-                    <div class="font-bold">Anand Raj</div>
-                    <div class="text-xs text-slate-400 font-bold uppercase">Mount Road, Chennai</div>
                 </div>
             </div>
         </div>
@@ -943,6 +935,99 @@
                             <i data-lucide="arrow-right" class="w-6 h-6"></i>
                         </div>
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="reviews" class="py-24 bg-ice/30 dark:bg-slate-800/20 transition-colors">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-primary font-bold uppercase tracking-widest text-sm mb-4">Reviews</h2>
+                <h3 class="text-4xl font-extrabold font-outfit dark:text-white">What Our Customers Say</h3>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div
+                    class="bg-white dark:bg-slate-800 p-7 md:p-8 rounded-3xl shadow-sm border border-ice dark:border-slate-700 relative reveal">
+                    <div
+                        class="absolute -top-4 -left-4 w-11 h-11 bg-primary text-white rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20">
+                        <i data-lucide="quote" class="w-5 h-5"></i>
+                    </div>
+                    <div class="flex text-yellow-500 gap-1 mb-5">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 italic mb-6 leading-relaxed">"Excellent service! They
+                        repaired my AC within 3 hours of calling. The technician was very professional and the price was
+                        transparent."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-primary font-outfit">
+                            MK</div>
+                        <div>
+                            <div class="font-bold dark:text-white">Muthu Kumar</div>
+                            <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Anna Nagar,
+                                Chennai</div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-800 p-7 md:p-8 rounded-3xl shadow-sm border border-ice dark:border-slate-700 relative reveal">
+                    <div
+                        class="absolute -top-4 -left-4 w-11 h-11 bg-primary text-white rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20">
+                        <i data-lucide="quote" class="w-5 h-5"></i>
+                    </div>
+                    <div class="flex text-yellow-500 gap-1 mb-5">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 italic mb-6 leading-relaxed">"Bought a new fridge from
+                        Sornam. Great advice on choosing the right model and the delivery was prompt. Highly
+                        recommended!"</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-primary font-outfit">
+                            PS</div>
+                        <div>
+                            <div class="font-bold dark:text-white">Priya Sundar</div>
+                            <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Adyar, Chennai
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-800 p-7 md:p-8 rounded-3xl shadow-sm border border-ice dark:border-slate-700 relative sm:col-span-2 lg:col-span-1 reveal">
+                    <div
+                        class="absolute -top-4 -left-4 w-11 h-11 bg-primary text-white rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20">
+                        <i data-lucide="quote" class="w-5 h-5"></i>
+                    </div>
+                    <div class="flex text-yellow-500 gap-1 mb-5">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 italic mb-6 leading-relaxed">"Their washing machine
+                        repair service is top-notch. They fixed a complex PCB issue that others couldn't handle. Very
+                        satisfied."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-primary font-outfit">
+                            AR</div>
+                        <div>
+                            <div class="font-bold dark:text-white">Anand Raj</div>
+                            <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Mount Road,
+                                Chennai</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

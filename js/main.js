@@ -22,13 +22,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Active Section Highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinksMobile = document.querySelectorAll('.nav-link-mobile');
+
+    const highlightActiveSection = () => {
+        let currentSectionId = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= sectionTop - 150) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+
+        const updateLinks = (links, activeClass) => {
+            links.forEach(link => {
+                link.classList.remove(activeClass);
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add(activeClass);
+                }
+            });
+        };
+
+        updateLinks(navLinks, 'active');
+        updateLinks(navLinksMobile, 'active');
+    };
+
+    window.addEventListener('scroll', highlightActiveSection);
+
     // Mobile Menu Toggle
     const menuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     let isMenuOpen = false;
 
-    menuToggle.addEventListener('click', () => {
-        isMenuOpen = !isMenuOpen;
+    const toggleMenu = (open) => {
+        isMenuOpen = open;
         if (isMenuOpen) {
             mobileMenu.classList.remove('hidden');
             setTimeout(() => {
@@ -43,29 +73,25 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.innerHTML = '<i data-lucide="menu"></i>';
         }
         lucide.createIcons();
-    });
+    };
+
+    menuToggle.addEventListener('click', () => toggleMenu(!isMenuOpen));
 
     // Close mobile menu on link click
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            isMenuOpen = false;
-            mobileMenu.classList.remove('opacity-100', 'translate-y-0');
-            setTimeout(() => {
-                mobileMenu.classList.add('hidden');
-            }, 300);
-            menuToggle.innerHTML = '<i data-lucide="menu"></i>';
-            lucide.createIcons();
-        });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => toggleMenu(false));
     });
 
     // Smooth Scroll for all links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const target = document.querySelector(targetId);
             if (target) {
-                const headerOffset = 100;
+                const headerOffset = 80;
                 const elementPosition = target.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -79,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Reveal on Scroll with stagger
     const observerOptions = {
-        threshold: 0.1,
+        threshold: 0.15,
         rootMargin: "0px 0px -50px 0px"
     };
 
@@ -87,39 +113,39 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-
-                // Trigger children animations if needed
-                const cards = entry.target.querySelectorAll('.product-card, .group');
-                cards.forEach((card, index) => {
+                
+                // Staggered children animation
+                const animatedItems = entry.target.querySelectorAll('.product-card, .group, .reveal');
+                animatedItems.forEach((item, index) => {
                     setTimeout(() => {
-                        card.classList.add('fade-in');
-                        card.classList.add('active');
+                        item.classList.add('active', 'fade-in');
                     }, index * 100);
                 });
             }
         });
     }, observerOptions);
 
-    // Observe elements with reveal class
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Form Submission (Frontend only)
+    // Form Submission
     const serviceForm = document.getElementById('service-form');
     if (serviceForm) {
         serviceForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const submitBtn = serviceForm.querySelector('button');
-            const originalText = submitBtn.innerText;
+            const originalContent = submitBtn.innerHTML;
 
-            submitBtn.innerText = 'Sending...';
+            submitBtn.innerHTML = '<span class="flex items-center gap-2 justify-center"><i data-lucide="loader-2" class="animate-spin w-5 h-5"></i> Processing...</span>';
+            lucide.createIcons();
             submitBtn.disabled = true;
 
             setTimeout(() => {
-                alert('Thank you! Your service request has been sent. We will contact you shortly.');
+                alert('Success! Your request has been sent. Our team will contact you within 2 hours.');
                 serviceForm.reset();
-                submitBtn.innerText = originalText;
+                submitBtn.innerHTML = originalContent;
                 submitBtn.disabled = false;
-            }, 1500);
+                lucide.createIcons();
+            }, 1800);
         });
     }
 });
